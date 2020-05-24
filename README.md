@@ -6,7 +6,7 @@
 *work in progress*
 
 ## About
-The idea of this project is to show some useful data within the well known 1602 LCD display (16 chars x 2 lines) with an I2C interface. I have [this one](https://www.amazon.com/SunFounder-Serial-Module-Display-Arduino/dp/B019K5X53O). \
+The idea of this project is to show some useful data within the well known [1602 LCD display](https://www.amazon.com/SunFounder-Serial-Module-Display-Arduino/dp/B019K5X53O) (16 chars x 2 lines) with an I2C interface. \
 In addition, I use a DHT22 temperature and humidity sensor to keep track of the temperature and humidity inside the room. \
 Finally, I keep track the city's temperature and humidity using the OpenWeatherMap API. \
 Data shown in the LCD will include CPU/Memory/Disk info, plus weather info. Maybe I buy a 20x04 LCD display or a TFT display to show even more info.
