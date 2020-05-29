@@ -2,7 +2,8 @@
 
 ## Table of Contents
 1. [About](#about)
-2. [Libraries Used](#libraries-used)
+2. [About Lab](#about-lab)
+3. [Libraries Used](#libraries-used)
 
 *work in progress*
 
@@ -12,8 +13,11 @@ In addition, I use a DHT22 temperature and humidity sensor to keep track of the 
 Finally, I keep track the city's temperature and humidity using the OpenWeatherMap API. \
 Data shown in the LCD will include CPU/Memory/Disk info, plus weather info. Maybe I buy a 20x04 LCD display or a TFT display to show even more info.
 
-I've choose Node.JS due its asynchronism and the fact it has a pretty decent support for Raspberry. Other option was using Python with multi threading support, but I though it would add too much complexity to the project. \
+I've chosen Node.JS due its asynchronism and the fact it has a pretty decent support for Raspberry. Other option was using Python with multi threading support, but I though it would add too much complexity to the project. \
 Why do I want a-sync be present in this project? Well, due I need to perform a few tasks and all of them have different execution times, it would be nicer if they can run as much simultanously as possible to avoid I/O locks. Remember this script will run in a scheduled way while I use the Raspberry for any other tasks.
+
+## About Lab
+Here is my playground to try different features or scripts separately from the main code.
 
 ## Libraries Used
 * **[Axios](https://github.com/axios/axios)**: Retrieves URLs asynchronously using promises. Also, It has only one direct dependency (follow-redirects) and two indirects (debug and ms).
