@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [About](#about)
+2. [Libraries Used](#libraries-used)
 
 *work in progress*
 
@@ -13,3 +14,7 @@ Data shown in the LCD will include CPU/Memory/Disk info, plus weather info. Mayb
 
 I've choose Node.JS due its asynchronism and the fact it has a pretty decent support for Raspberry. Other option was using Python with multi threading support, but I though it would add too much complexity to the project. \
 Why do I want a-sync be present in this project? Well, due I need to perform a few tasks and all of them have different execution times, it would be nicer if they can run as much simultanously as possible to avoid I/O locks. Remember this script will run in a scheduled way while I use the Raspberry for any other tasks.
+
+## Libraries Used
+* **[Axios](https://github.com/axios/axios)**: Retrieves URLs asynchronously using promises. Also, It has only one direct dependency (follow-redirects) and two indirects (debug and ms).
+* **[Dotenv](https://github.com/motdotla/dotenv)**: Stores secrets using *.env* files.
