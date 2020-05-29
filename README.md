@@ -1,13 +1,13 @@
 # Status LCD for Raspberry Pi
 
 ## Table of Contents
-1. [About](#about)
+1. [About this project](#about)
 2. [About Lab](#about-lab)
 3. [Libraries Used](#libraries-used)
 
 *work in progress*
 
-## About
+## About this project
 The idea of this project is to show some useful data within the well known [1602 LCD display](https://www.amazon.com/SunFounder-Serial-Module-Display-Arduino/dp/B019K5X53O) (16 chars x 2 lines) with an I2C interface. \
 In addition, I use a DHT22 temperature and humidity sensor to keep track of the temperature and humidity inside the room. \
 Finally, I keep track the city's temperature and humidity using the OpenWeatherMap API. \

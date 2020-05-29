@@ -38,7 +38,7 @@ console.log(executingAt())
 
 var getUrl = axios.get(url)
 
-// Other stuff to do while the URL is requested
+// Other stuff to do while the URL is being requested
 
 getUrl.then(function (result) {
     var responseData = result.data
