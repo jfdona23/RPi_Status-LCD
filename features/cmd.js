@@ -1,7 +1,5 @@
-const { exec } = require('child_process')
-
-//var stderr
-//var stdout
+const util = require('util')
+const exec = util.promisify(require('child_process').exec)
 
 /*
 # Timing function
@@ -13,23 +11,43 @@ function executingAt() {
 console.log(executingAt())
 */
 
-function cmdOutput(err, stdout, stderr) {
-    if (err) {
-        console.log('It was an error: ' + err)
-        return
+async function cmdOutput(cmd) {
+    var cmdTemp = 'vcgencmd measure_temp'
+    var cmdTempOut
+
+    var cmdMem = 'free -m | grep "Mem\:" |awk \'{print $7}\''
+    var cmdMemOut
+
+    var cmdDisk = 'df -h --sync --output=pcent / |grep -vi use'
+    var cmdDiskOut
+
+    try {
+        var { stdout, stderr } = await exec(cmdTemp)
+        cmdTempOut = parseInt(stdout.split('=')[1].split('\'')[0])
+    } catch(e) {
+        console.log(e)
     }
-    
-    //stderr = stderr
-    //stdout = stdout
-    console.log('stdout: \n' + stdout)
-    console.log('stderr: \n' + stderr)
-    return
+
+    try {
+        var { stdout, stderr } = await exec(cmdMem)
+        cmdMemOut = parseInt(stdout)/1024
+    } catch(e) {
+        console.log(e)
+    }
+
+    try {
+        var { stdout, stderr } = await exec(cmdDisk)
+        cmdDiskOut = stdout.trim()
+    } catch(e) {
+        console.log(e)
+    }
+
+    return {
+      cpuTemp: cmdTempOut.toFixed(0),
+      freeMem: cmdMemOut.toFixed(1),
+      usedDisk: cmdDiskOut
+    }
 }
 
-function myExec() {
-    exec('vcgencmd measure_temp', cmdOutput)
-    return
-}
 
-myExec()
-module.exports.myExec = myExec
+module.exports.cmdOutput = cmdOutput
