@@ -8,7 +8,7 @@ const lcd = new LCD( 1, 0x27, 16, 2 );
 
 lcd.beginSync()
 lcd.clearSync()
-
+/*
 getWeather()
     .then(data => {
         lcd.printLineSync(0, `O: T:${data.temp}c H:${data.hum}`)
@@ -27,12 +27,14 @@ readDHT()
     }).catch(err => {
         console.log(err)
     })
-
+*/
 cmdOutput()
     .then(data => {
-        console.log(data.cpuTemp)
-        console.log(data.freeMem)
-        console.log(data.usedDisk)
+        lcd.printLineSync(0, `CPU: ${data.cpuTemp} Mem: ${data.freeMem}G`)
+        lcd.printLineSync(1, `Disk Usage: ${data.usedDisk}`)
+        //console.log(data.cpuTemp)
+        //console.log(data.freeMem)
+        //console.log(data.usedDisk)
     })
     .catch(err => {
         console.log(err)
