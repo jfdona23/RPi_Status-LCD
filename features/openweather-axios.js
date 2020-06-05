@@ -14,8 +14,8 @@ async function getUrl() {
     var parsedJSON = JSON.parse(JSON.stringify(response.data))
 
     return {
-        temp: parsedJSON.main.feels_like,
-        hum: parsedJSON.main.humidity
+        temp: parsedJSON.main.feels_like.toFixed(1),
+        hum: parsedJSON.main.humidity.toFixed(0)
     }
     /*
     // Promises approach
