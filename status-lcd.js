@@ -1,10 +1,11 @@
 const { getWeather } = require('./features/openweather-axios.js')
 const { readDHT } = require('./features/dht22.js')
 const { cmdOutput } = require('./features/cmd.js')
+
 const LCD = require('raspberrypi-liquid-crystal');
-
-
 const lcd = new LCD( 1, 0x27, 16, 2 );
+
+var dateObj = new Date()
 
 lcd.beginSync()
 lcd.clearSync()
@@ -31,7 +32,6 @@ function weatherLoop() {
 
 }
 
-
 function hwLoop() {
     cmdOutput()
         .then(data => {
@@ -46,5 +46,7 @@ function hwLoop() {
         })
 }
 
-setInterval(hwLoop, 10 * 1000)
-setInterval(weatherLoop, 30 * 1000)
+while ((dateObj.getHours() <= 23) && (dateObj.getUTCHours() > 8)) {
+    setTimeout(hwLoop, 10 * 1000)
+    setTimeout(weatherLoop, 30 * 1000)
+}
