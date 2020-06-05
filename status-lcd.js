@@ -1,5 +1,5 @@
-const { getWeather } = require('./features/openweather-axios.js')
-const { readDHT } = require('./features/dht22.js')
+//const { getWeather } = require('./features/openweather-axios.js')
+//const { readDHT } = require('./features/dht22.js')
 const { cmdOutput } = require('./features/cmd.js')
 const LCD = require('raspberrypi-liquid-crystal');
 
