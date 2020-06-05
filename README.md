@@ -23,5 +23,5 @@ Why do I want a-sync be present in this project? Well, due I need to perform a f
 * **[Util](https://nodejs.org/api/util.html)**: Built-in library with several useful utilities. I've used it to *promisify* functions.
 
 ## Notes
-* Currently, I'm only displaying CPU/RAM/Disk info rather than weather data. That's because I run this script using a *cron* job and is a little bit tricky to alternate between screens in a proper way. \
+* Currently, I'm only displaying CPU/RAM/Disk info rather than weather data. That's because ~~I run this script using a *cron* job and~~ it's a little bit tricky to alternate between screens in a proper way. \
 Hardware info needs to be retrieved every 60 seconds, while weather data needs to be retrieved every 300 seconds. I could create two *cron* jobs, one every 60s and another one every 300s but that will override the weather info (300s) as soon as the hardware info is shown (60s) and not showing weather data until the next weather job runs.
