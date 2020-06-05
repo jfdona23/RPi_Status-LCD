@@ -1,5 +1,6 @@
 const { getWeather } = require('./features/openweather-axios.js')
 const { readDHT } = require('./features/dht22.js')
+const { cmdOutput } = require('./features/cmd.js')
 const LCD = require('raspberrypi-liquid-crystal');
 
 
@@ -24,5 +25,15 @@ readDHT()
         //console.log(data.temp)
         //console.log(data.hum)
     }).catch(err => {
+        console.log(err)
+    })
+
+cmdOutput()
+    .then(data => {
+        console.log(data.cpuTemp)
+        console.log(data.freeMem)
+        console.log(data.usedDisk)
+    })
+    .catch(err => {
         console.log(err)
     })
