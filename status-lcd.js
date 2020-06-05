@@ -5,7 +5,6 @@ const { cmdOutput } = require('./features/cmd.js')
 const LCD = require('raspberrypi-liquid-crystal');
 const lcd = new LCD( 1, 0x27, 16, 2 );
 
-var dateObj = new Date()
 
 lcd.beginSync()
 lcd.clearSync()
@@ -46,7 +45,5 @@ function hwLoop() {
         })
 }
 
-while ((dateObj.getHours() <= 23) && (dateObj.getUTCHours() > 8)) {
-    setTimeout(hwLoop, 10 * 1000)
-    setTimeout(weatherLoop, 30 * 1000)
-}
+setInterval(hwLoop, 60 * 1000)
+//setInterval(weatherLoop, 600 * 1000)
