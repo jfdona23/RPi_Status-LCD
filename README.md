@@ -19,7 +19,6 @@ Why do I want a-sync be present in this project? Well, due I need to perform a f
 * **[Dotenv](https://github.com/motdotla/dotenv)**: Library to retrieve secrets or parameters using *.env* files.
 * **[Raspberrypi Liquid Crystal](https://www.npmjs.com/package/raspberrypi-liquid-crystal)**: Library to control I2C-LCD using a Raspberry Pi.
 * **[Node DHT Sensor](https://www.npmjs.com/package/node-dht-sensor)**: Library to control DHTxx or AMxxxx sensors using a Raspberry Pi.
-* **[RPi WS281x](https://www.npmjs.com/package/rpi-ws281x)**: Library to comunicate with RGB leds using Adafruit's NeoPixel protocol. Python usage [here](https://learn.adafruit.com/neopixels-on-raspberry-pi/python-usage).
 * **[Child Process](https://nodejs.org/api/child_process.html)**: Built-in library to spawn child processes and execute shell comands on the underlying OS.
 * **[Util](https://nodejs.org/api/util.html)**: Built-in library with several useful utilities. I've used it to *promisify* functions.
 
