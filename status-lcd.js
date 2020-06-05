@@ -30,7 +30,7 @@ readDHT()
 */
 cmdOutput()
     .then(data => {
-        lcd.printLineSync(0, `CPU: ${data.cpuTemp} Mem: ${data.freeMem}G`)
+        lcd.printLineSync(0, `CPU:${data.cpuTemp}C Mem:${data.freeMem}G`)
         lcd.printLineSync(1, `Disk Usage: ${data.usedDisk}`)
         //console.log(data.cpuTemp)
         //console.log(data.freeMem)
